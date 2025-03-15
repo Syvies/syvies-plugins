@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3r7cbmlis52"]
+
+[ext_resource type="Script" uid="uid://d3v37cl7glvna" path="res://addons/camera-flow/scripts/CameraManager.cs" id="1_scj7h"]
+
+[node name="CameraFlow" type="Node3D"]
+script = ExtResource("1_scj7h")

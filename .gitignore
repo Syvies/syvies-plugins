@@ -29,3 +29,4 @@ addons/*
 
 # Whitelist current plugin and dependencies
 !addons/syvies-core/
+!addons/camera-flow/
