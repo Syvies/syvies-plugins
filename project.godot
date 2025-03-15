@@ -13,7 +13,7 @@ config_version=5
 config/name="Syvies Plugins"
 config/tags=PackedStringArray("c#", "github")
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="uid://camgqkrwsx1be"
+config/icon="uid://bidlgq1mdri56"
 
 [display]
 
@@ -28,7 +28,10 @@ project/assembly_name="SyviesPlugins"
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray"
+"res://addons/": "gray",
+"res://addons/syvies-core/": "purple",
+"res://icons-full-res/": "blue",
+"res://test/": "red"
 }
 
 [physics]

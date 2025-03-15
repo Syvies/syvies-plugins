@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://chig0bbw3mj8i"]
+
+[ext_resource type="Script" uid="uid://frynmnogj24n" path="res://addons/syvies-core/scripts/debug/debug.gd" id="1_2rqj2"]
+[ext_resource type="PackedScene" uid="uid://cw46miykrs3nf" path="res://addons/syvies-core/scenes/debug/debug_panel.tscn" id="2_meagi"]
+[ext_resource type="Script" uid="uid://bfl2e2lkr5gn" path="res://addons/syvies-core/scripts/debug/Debug.cs" id="3_a3urg"]
+
+[node name="DebugUtils" type="Node"]
+script = ExtResource("1_2rqj2")
+
+[node name="DebugPanel" parent="." instance=ExtResource("2_meagi")]
+visible = false
+
+[node name="Debug" type="Node" parent="."]
+script = ExtResource("3_a3urg")

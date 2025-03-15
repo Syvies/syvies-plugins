@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw46miykrs3nf"]
+
+[ext_resource type="Script" uid="uid://dbxktw8wln4uw" path="res://addons/syvies-core/scripts/debug/DebugPanel.cs" id="1_tuafa"]
+[ext_resource type="Theme" uid="uid://ylimavseafnr" path="res://addons/syvies-core/theme/debug_theme.tres" id="2_c1l35"]
+
+[node name="DebugPanel" type="CanvasLayer" node_paths=PackedStringArray("propertyContainer")]
+script = ExtResource("1_tuafa")
+propertyContainer = NodePath("Main/HBox/VBox/DebugPanel/Margin/PropertyContainer")
+
+[node name="Main" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("2_c1l35")
+
+[node name="HBox" type="HBoxContainer" parent="Main"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Main/HBox"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DebugPanel" type="PanelContainer" parent="Main/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Main/HBox/VBox/DebugPanel"]
+layout_mode = 2
+
+[node name="PropertyContainer" type="VBoxContainer" parent="Main/HBox/VBox/DebugPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 0
