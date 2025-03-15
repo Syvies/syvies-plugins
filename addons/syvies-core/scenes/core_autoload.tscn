@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://djgw1keq80hgh"]
+
+[ext_resource type="PackedScene" uid="uid://chig0bbw3mj8i" path="res://addons/syvies-core/scenes/debug/debug_utils.tscn" id="1_uqb43"]
+[ext_resource type="Script" uid="uid://xd1br87788ck" path="res://addons/syvies-core/scripts/debug/Logger.cs" id="2_3byph"]
+[ext_resource type="Script" uid="uid://da2pcjyy6yk47" path="res://addons/syvies-core/scripts/utils/NodeUtilities.cs" id="3_4efm4"]
+[ext_resource type="Script" uid="uid://6iifywv1ei50" path="res://addons/syvies-core/scripts/utils/Utilities3D.cs" id="4_gd7n2"]
+
+[node name="SyviesCore" type="Node"]
+
+[node name="DebugUtils" parent="." instance=ExtResource("1_uqb43")]
+
+[node name="Logger" type="Node" parent="."]
+script = ExtResource("2_3byph")
+
+[node name="NodeUtilities" type="Node" parent="."]
+script = ExtResource("3_4efm4")
+
+[node name="Utilities3D" type="Node3D" parent="."]
+script = ExtResource("4_gd7n2")

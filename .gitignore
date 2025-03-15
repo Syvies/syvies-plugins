@@ -14,6 +14,19 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-# custom ignores
+# Custom ignores
+.editorconfig
+project.godot
+*.csproj
+*.sln
 .vs/
 .vscode/
+icons-full-res/
+test/
+
+# Plugins ignore
+addons/*
+
+# Whitelist current plugin and dependencies
+!addons/syvies-core/
+!addons/camera-flow/

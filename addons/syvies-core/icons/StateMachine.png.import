@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://camgqkrwsx1be"
-path="res://.godot/imported/syvies-icon.png-a75e20cecd65092b41e7d1f8086f13f7.ctex"
+uid="uid://bmgwr7br4miqd"
+path="res://.godot/imported/StateMachine.png-526fd365eb8ad3f62381ef677080679f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://syvies-icon.png"
-dest_files=["res://.godot/imported/syvies-icon.png-a75e20cecd65092b41e7d1f8086f13f7.ctex"]
+source_file="res://addons/syvies-core/icons/StateMachine.png"
+dest_files=["res://.godot/imported/StateMachine.png-526fd365eb8ad3f62381ef677080679f.ctex"]
 
 [params]
 
