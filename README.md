@@ -25,9 +25,9 @@
 
 ## Main Plugins
 
-* Syvies Core
+* [Syvies Core](https://github.com/Syvies/syvies-plugins/tree/syvies-core/addons/syvies-core)
   - A collection of different C# utilities for Godot and other plugins made by Syvies.
-* Camera Flow
+* [Camera Flow](https://github.com/Syvies/syvies-plugins/tree/camera-flow/addons/camera-flow)
   - A Godot C# plugin to add more control over the Camera3D movement.
 
 ## How To Use
