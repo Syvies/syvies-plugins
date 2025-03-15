@@ -1,5 +1,4 @@
 using Godot;
-using SyviesCore.DebugUtils;
 using SyviesCore.Utils;
 
 namespace CameraFlow;
@@ -151,6 +150,12 @@ public partial class ThirdPersonCamera : Marker3D
 		yRotator.AddChild(xRotator);
 		cameraTarget.AddChild(yRotator);
 		AddChild(cameraTarget);
+
+		cameraTarget.Owner = this;
+		yRotator.Owner = this;
+		xRotator.Owner = this;
+		springArm.Owner = this;
+		virtualCamera.Owner = this;
 	}
 
 

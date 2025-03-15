@@ -33,11 +33,24 @@ public partial class DynamicCamera : Camera3D
 	}
 
 
-	private async void OnCameraChanged(VirtualCamera camera)
+	private void OnCameraChanged(VirtualCamera camera)
+	{
+		if (!IsInstanceValid(camera)) { return; }
+
+		if (Engine.IsEditorHint())
+		{
+			ChangeCamera(camera);
+		}
+		else
+		{
+			ChangeCameraAsync(camera);
+		}
+	}
+
+
+	private void ChangeCamera(VirtualCamera camera)
 	{
 		if (currentCamera == camera) { return; }
-
-		await TransitionToCamera(currentCamera, camera);
 
 		currentCamera = camera;
 		if (!IsInstanceValid(currentCamera)) { return; }
@@ -58,6 +71,16 @@ public partial class DynamicCamera : Camera3D
 		Fov = camResource.Fov;
 		Size = camResource.Size;
 		FrustumOffset = camResource.FrustumOffset;
+	}
+
+
+	private async void ChangeCameraAsync(VirtualCamera camera)
+	{
+		if (currentCamera == camera) { return; }
+
+		await TransitionToCamera(currentCamera, camera);
+
+		ChangeCamera(camera);
 	}
 
 
@@ -83,7 +106,7 @@ public partial class DynamicCamera : Camera3D
 			camTween = origin.TransitionOut;
 		}
 
-		if (camTween == null) { return; }
+		if (!IsInstanceValid(camTween)) { return; }
 		
 		isInTransition = true;
 
