@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/Syvies/syvies-plugins"><img src="https://github.com/Syvies/syvies-plugins/blob/syvies-core/addons/syvies-core/syvies-core-icon.png" alt="Syvies Plugin" width="256"></a>
+  <a href="https://github.com/Syvies/syvies-plugins"><img src="https://raw.githubusercontent.com/Syvies/syvies-plugins/master/addons/syvies-core/syvies-core-icon.png" alt="Syvies Plugin" width="256"></a>
   <br>
   Syvies Godot C# Plugins
   <br>
@@ -26,9 +26,9 @@
 ## Main Plugins
 
 * Syvies Core
-  - Description
+  - A collection of different C# utilities for Godot and other plugins made by Syvies.
 * Camera Flow
-  - Description
+  - A Godot C# plugin to add more control over the Camera3D movement.
 
 ## How To Use
 
@@ -36,8 +36,8 @@ You can install it via the Asset Library or download a copy of the wanted plugin
 
 ## Download
 
-- Syvies Core (not available)
-- Camera Flow (not available)
+- Syvies Core: [Asset Library](https://godotengine.org/asset-library/asset/16148) | [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/syvies-core-v0.1.0.zip)
+- Camera Flow: [Asset Library](https://godotengine.org/asset-library/asset/16149) | [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/camera-flow-v0.1.0.zip)
 
 ## Credits
 
