@@ -25,6 +25,8 @@ public partial class DebugPanel : CanvasLayer
 			return;
 		}
 		instance = this;
+
+		CheckForInput();
 	}
 
 
