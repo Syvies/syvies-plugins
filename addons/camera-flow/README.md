@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/Syvies/syvies-plugins/tree/camera-flow"><img src="https://github.com/Syvies/syvies-plugins/blob/camera-flow/addons/camera-flow/camera-flow-icon.png" alt="Camera Flow" width="256"></a>
+  <a href="https://github.com/Syvies/syvies-plugins/tree/camera-flow/addons/camera-flow"><img src="https://raw.githubusercontent.com/Syvies/syvies-plugins/master/addons/camera-flow/camera-flow-icon.png" alt="Camera Flow" width="256"></a>
   <br>
   Camera Flow
   <br>
