@@ -1,13 +1,13 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/Syvies/syvies-plugins/tree/syvies-core"><img src="https://github.com/Syvies/syvies-plugins/blob/syvies-core/addons/syvies-core/syvies-core-icon.png" alt="Syvies Core" width="256"></a>
+  <a href="https://github.com/Syvies/syvies-plugins/tree/syvies-core"><img src="https://raw.githubusercontent.com/Syvies/syvies-plugins/master/addons/syvies-core/syvies-core-icon.png" alt="Syvies Core" width="256"></a>
   <br>
   Syvies Core
   <br>
 </h1>
 
-<h4 align="center">A collection of different C# utilities for Godot and other plugins made by me.</h4>
+<h4 align="center">A collection of different C# utilities for Godot and other plugins made by Syvies.</h4>
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -47,8 +47,8 @@ You can install it via the Asset Library or download a copy of the wanted plugin
 
 ## Download
 
-- Asset Library (not available)
-- Direct download (not available)
+- [Asset Library](https://godotengine.org/asset-library/asset/3833)
+- [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/syvies-core-v0.1.0.zip)
 
 ## Credits
 
