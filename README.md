@@ -36,8 +36,8 @@ You can install it via the Asset Library or download a copy of the wanted plugin
 
 ## Download
 
-- Syvies Core: [Asset Library](https://godotengine.org/asset-library/asset/16148) | [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/syvies-core-v0.1.0.zip)
-- Camera Flow: [Asset Library](https://godotengine.org/asset-library/asset/16149) | [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/camera-flow-v0.1.0.zip)
+- Syvies Core: [Asset Library](https://godotengine.org/asset-library/asset/3833) | [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/syvies-core-v0.1.0.zip)
+- Camera Flow: [Asset Library](https://godotengine.org/asset-library/asset/3834) | [Direct download](https://github.com/Syvies/syvies-plugins/archive/refs/tags/camera-flow-v0.1.0.zip)
 
 ## Credits
 
