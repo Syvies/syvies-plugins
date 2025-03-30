@@ -30,6 +30,9 @@ public partial class PluginCameraFlow : EditorPlugin
 	private const string THIRD_PERSON_NAME = "ThirdPersonCamera";
 	private const string THIRD_PERSON_SCRIPT = "res://addons/camera-flow/scripts/ThirdPersonCamera.cs";
 	private const string THIRD_PERSON_ICON = "res://addons/camera-flow/icons/ThirdPersonCamera.png";
+	private const string STRATEGY_NAME = "StrategyCamera";
+	private const string STRATEGY_SCRIPT = "res://addons/camera-flow/scripts/StrategyCamera.cs";
+	private const string STRATEGY_ICON = "res://addons/camera-flow/icons/StrategyCamera.png";
 
 	VirtualCameraGizmo virtualCameraGizmo = new();
 
@@ -52,6 +55,10 @@ public partial class PluginCameraFlow : EditorPlugin
 		Texture2D thirdPersonIcon = GD.Load<Texture2D>(THIRD_PERSON_ICON);
 		AddCustomType(THIRD_PERSON_NAME, MARKER_3D, thirdPersonScript, thirdPersonIcon);
 
+		Script strategyScript = GD.Load<Script>(STRATEGY_SCRIPT);
+		Texture2D strategyIcon = GD.Load<Texture2D>(STRATEGY_ICON);
+		AddCustomType(STRATEGY_NAME, MARKER_3D, strategyScript, strategyIcon);
+
 		AddNode3DGizmoPlugin(virtualCameraGizmo);
 	}
 
@@ -63,6 +70,7 @@ public partial class PluginCameraFlow : EditorPlugin
 		RemoveCustomType(VIRTUAL_CAMERA_NAME);
 		RemoveCustomType(DYNAMIC_CAMERA_NAME);
 		RemoveCustomType(THIRD_PERSON_NAME);
+		RemoveCustomType(STRATEGY_NAME);
 	}
 
 

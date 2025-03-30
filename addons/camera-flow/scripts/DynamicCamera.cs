@@ -1,5 +1,7 @@
 using Godot;
+using System;
 using System.Threading.Tasks;
+using SyviesCore.DebugUtils;
 using SyviesCore.Utils;
 
 namespace CameraFlow;
@@ -25,7 +27,7 @@ public partial class DynamicCamera : Camera3D
 	}
 
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		if (!IsInstanceValid(currentCamera) || isInTransition) { return; }
 
@@ -52,12 +54,24 @@ public partial class DynamicCamera : Camera3D
 	{
 		if (currentCamera == camera) { return; }
 
+		if (IsInstanceValid(currentCamera) && !Engine.IsEditorHint())
+		{
+			currentCamera.CameraResource.Changed -= OnCameraResourceChanged;
+		}
+
 		currentCamera = camera;
 		if (!IsInstanceValid(currentCamera)) { return; }
 
 		CameraResource camResource = currentCamera.CameraResource;
-		if (!IsInstanceValid(camResource))
+
+		if (IsInstanceValid(camResource))
 		{
+			if (!Engine.IsEditorHint())
+			{
+				camResource.Changed += OnCameraResourceChanged;
+			}
+		}
+		else {
 			camResource = new();
 		}
 
@@ -72,7 +86,6 @@ public partial class DynamicCamera : Camera3D
 		Size = camResource.Size;
 		FrustumOffset = camResource.FrustumOffset;
 	}
-
 
 	private async void ChangeCameraAsync(VirtualCamera camera)
 	{
@@ -93,7 +106,7 @@ public partial class DynamicCamera : Camera3D
 
 		isInTransition = false;
 
-		if (!IsInstanceValid(origin) || !IsInstanceValid(destination) || origin == destination || origin.CameraResource.ProjectionType != destination.CameraResource.ProjectionType) { return; }
+		if (!IsInstanceValid(origin) || !IsInstanceValid(destination) || origin.CameraResource.ProjectionType != destination.CameraResource.ProjectionType) { return; }
 
 		TweenResource camTween = null;
 
@@ -123,5 +136,20 @@ public partial class DynamicCamera : Camera3D
 		await ToSignal(transitionTween, Tween.SignalName.Finished);
 
 		isInTransition = false;
+	}
+
+
+	private void OnCameraResourceChanged()
+	{
+		GlobalPosition = currentCamera.GlobalPosition;
+		Quaternion = currentCamera.Quaternion;
+		Projection = currentCamera.CameraResource.ProjectionType;
+		KeepAspect = currentCamera.CameraResource.KeepAspect;
+		CullMask = currentCamera.CameraResource.CullMask;
+		Near = currentCamera.CameraResource.Near;
+		Far = currentCamera.CameraResource.Far;
+		Fov = currentCamera.CameraResource.Fov;
+		Size = currentCamera.CameraResource.Size;
+		FrustumOffset = currentCamera.CameraResource.FrustumOffset;
 	}
 }

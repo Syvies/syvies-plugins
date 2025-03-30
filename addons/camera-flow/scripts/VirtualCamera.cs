@@ -28,14 +28,14 @@ public partial class VirtualCamera : Node3D
 
 			if (IsInstanceValid(camResourceValue))
 			{
-				camResourceValue.PropertyUpdated -= OnCamResourceChanged;
+				camResourceValue.Changed -= OnCamResourceChanged;
 			}
 
 			camResourceValue = value;
 
 			if (IsInstanceValid(camResourceValue))
 			{
-				camResourceValue.PropertyUpdated += OnCamResourceChanged;
+				camResourceValue.Changed += OnCamResourceChanged;
 			}
 
 			OnCamResourceChanged();

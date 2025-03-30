@@ -1,12 +1,11 @@
 using Godot;
+using SyviesCore.DebugUtils;
 
 namespace CameraFlow;
 
 [Tool]
 public partial class CameraResource : Resource
 {
-	[Signal] public delegate void PropertyUpdatedEventHandler();
-
 	[Export] public Camera3D.KeepAspectEnum KeepAspect
 	{
 		get => keepAspectValue;
@@ -15,7 +14,7 @@ public partial class CameraResource : Resource
 			if (keepAspectValue == value) { return; }
 
 			keepAspectValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
 	[Export(PropertyHint.Layers3DRender)] public uint CullMask
@@ -26,10 +25,10 @@ public partial class CameraResource : Resource
 			if (cullMaskValue == value) { return; }
 
 			cullMaskValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
-	[Export(PropertyHint.Range, "0.001,10,0.001,or_greater")] public float Near
+	[Export(PropertyHint.Range, "0.001,10,,or_greater")] public float Near
 	{
 		get => nearValue;
 		set
@@ -37,10 +36,10 @@ public partial class CameraResource : Resource
 			if (nearValue == value) { return; }
 
 			nearValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
-	[Export(PropertyHint.Range, "0.01,4000,0.001,or_greater")] public float Far
+	[Export(PropertyHint.Range, "0.01,4000,,or_greater")] public float Far
 	{
 		get => farValue;
 		set
@@ -48,7 +47,7 @@ public partial class CameraResource : Resource
 			if (farValue == value) { return; }
 
 			farValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
 	[Export] public Camera3D.ProjectionType ProjectionType
@@ -59,7 +58,7 @@ public partial class CameraResource : Resource
 			if (projectionTypeValue == value) { return; }
 
 			projectionTypeValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
 	[ExportGroup("Perspective")]
@@ -71,11 +70,12 @@ public partial class CameraResource : Resource
 			if (fovValue == value) { return; }
 
 			fovValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
+			Logger.Info($"FOV: {fovValue}");
 		}
 	}
 	[ExportGroup("Orthographic")]
-	[Export(PropertyHint.Range, "0.001,100,0.001,or_greater")] public float OrthographicSize
+	[Export(PropertyHint.Range, "0.001,100,,or_greater")] public float OrthographicSize
 	{
 		get => Size;
 		set
@@ -83,11 +83,11 @@ public partial class CameraResource : Resource
 			if (Size == value) { return; }
 
 			Size = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
 	[ExportGroup("Frustum")]
-	[Export(PropertyHint.Range, "0.001,100,0.001,or_greater")] public float FrustumSize
+	[Export(PropertyHint.Range, "0.001,100,,or_greater")] public float FrustumSize
 	{
 		get => Size;
 		set
@@ -95,7 +95,7 @@ public partial class CameraResource : Resource
 			if (Size == value) { return; }
 
 			Size = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
 	[Export] public Vector2 FrustumOffset
@@ -106,7 +106,7 @@ public partial class CameraResource : Resource
 			if (frustumOffsetValue == value) { return; }
 
 			frustumOffsetValue = value;
-			EmitSignalPropertyUpdated();
+			EmitChanged();
 		}
 	}
 
