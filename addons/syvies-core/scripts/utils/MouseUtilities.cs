@@ -33,7 +33,7 @@ public static class MouseUtilities
 
 	public static Dictionary GetMouseRayCast(float rayLength = DEFAULT_RAY_LENGTH, uint layer = uint.MaxValue, bool collideWithBodies = true, bool collideWithAreas = false)
 	{
-		Dictionary result = null;
+		Dictionary result = [];
 
 		if (NodeUtilities.TryGetCamera3D(out Camera3D camera))
 		{
@@ -63,5 +63,23 @@ public static class MouseUtilities
 		}
 
 		return position;
+	}
+
+
+	public static bool TryGetMouseWorldPosition(out Vector3 position, float rayLength = DEFAULT_RAY_LENGTH, uint layer = uint.MaxValue, bool collideWithBodies = true, bool collideWithAreas = false)
+	{
+		Dictionary rayResult = GetMouseRayCast(rayLength, layer, collideWithBodies, collideWithAreas);
+
+		if (rayResult.Count > 0)
+		{
+			if (rayResult.TryGetValue("position", out Variant positionVariant))
+			{
+				position = positionVariant.AsVector3();
+				return true;
+			}
+		}
+
+		position = Vector3.Zero;
+		return false;
 	}
 }
