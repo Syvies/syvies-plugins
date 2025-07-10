@@ -1,3 +1,10 @@
+# DEPRECATED
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+This is no longer supported.
+
+---
 
 <h1 align="center">
   <br>
